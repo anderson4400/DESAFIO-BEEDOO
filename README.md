@@ -205,6 +205,11 @@ Los campos estan recibiendo cualquier tipo de caracteres eso se tiene que arregl
 ![image](https://github.com/user-attachments/assets/4c82284f-aee7-409f-a2db-a2e3ad6bbc2f)
 
 
+La paltaforma da un 405 al momento de intentar eliminar uno de los cursos de la lista esto se tiene que resolver
+![image](https://github.com/user-attachments/assets/9ca5f08b-a68b-4292-8a20-7897c1a9c6d2)
+
+
+
 
 
 
