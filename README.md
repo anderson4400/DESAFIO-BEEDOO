@@ -7,7 +7,7 @@ Rendimiento: Evaluar como se comporta la aplicacion bajo diferentes condiciones 
 Seguridad: identificar y corregir posibles vulnerabilidades de seguridad.
 Compatibilidad: Garantizar que la aplicacion funcione correctamente en diversos dispositivos y navegadores.
 
- Documentación de Casos de Prueba en Gherkin
+# Documentación de Casos de Prueba en Gherkin
 
 
 Inclui todos los casos en un solo Feature. 
@@ -180,7 +180,7 @@ Inclui todos los casos en un solo Feature.
     And El usuario hace clic en el botón "Eliminar Curso"
     Then "Se deberia de mostrar un mensaje indicando que se elimino pero no lo permite porque esta dando error."
 
-Problemas de la plataforma que se tienen que tomar en consideracion
+# Problemas de la plataforma que se tienen que tomar en consideracion
 
 Los campos del formulario tienen que ser requeridos para evitar que se registren datos vacio se tiene que mostrar un mensaje al momento de que se intente enviar el formulario vacio
 ![image](https://github.com/user-attachments/assets/f7cbe14b-5067-4cb3-a4d0-988065d89cf7)
@@ -209,19 +209,76 @@ La paltaforma da un 405 al momento de intentar eliminar uno de los cursos de la 
 ![image](https://github.com/user-attachments/assets/9ca5f08b-a68b-4292-8a20-7897c1a9c6d2)
 
 
-Listado de los casos de prueba en el excel 
+# Listado de los casos de prueba en el excel 
 https://docs.google.com/spreadsheets/d/1ZFc3xUtU4UTZinGqBK4HQ64veQZGyYkqq_J3AGab6pY/edit?usp=sharing
 
-Link del Driver con las evidencias de las Ejecuciones
+# Link del Driver con las evidencias de las Ejecuciones
 https://drive.google.com/drive/folders/1E8mRB6XzfV8a8I_KfZ_okPGV5je4CGfD?usp=sharing
 
+# Errores descubiertos en la plataforma de https://creative-sherbet-a51eac.netlify.app/
+405
+![image](https://github.com/user-attachments/assets/d0284a55-5314-4d04-8f01-3e63dc4d92bb)
+ Al momento de realizar la prueba de la eliminacion de los cursos se esta presentando  el error de 405 que es mas bien cuando el servidor rechada la solicitud en este caso
+la de la eliminacion
+
+-Pasos para replicarlos
+
+Precondicion: Tener en la lista de cursos cursos ya registrados
+
+Paso 1 - Dar click al boton de eliminar
+![image](https://github.com/user-attachments/assets/2c920afa-1c80-4ae6-b7d3-e503ff0b7eab)
+
+Paso 2 - Se mostrar un mensaje de "Curso Excluido con sucesso"
+![image](https://github.com/user-attachments/assets/b8de54c0-b68e-4b61-b716-2548a2dadb9d)
+
+- como se dio con el error 405
+Utilice el inspector y luego me dirigi a "NetWork" en donde puedo ver las peticiones realizadas en el cual pude notar el errorc  405
+![image](https://github.com/user-attachments/assets/500e2f2c-d31d-4f1b-ad60-ff677f2ec733)
+
+- Gravedad del problema
+esta es sumamente peligroso y arriesgado ya que el servidor esta rechanzado la peticion de eliminacion lo que quiere decir que existe un error de parte de los desarrolladores o con
+el ambiente esto ocaciona que la base de datos se llene de informacion basura lo que consume espacion inecesario y que si se quiere eliminar no se podra lo cual indica una mala funcion
+o comunicacion
+
+# Vulnerabilidades
+1- la plataforma no esta enmascarado la data permite cualquier tipo de datos en los campos
+2- No esa realiando una validacion esta recibiendo valores vacios y lo pasa como datos correcto se necesita una validadcion de datos o de campos
+3- la validacion de fecha esta permitiendo que se cree con fecha que esta muy atrasada no se puede registrar una clase para el pasado
+4- La lista de valores de "Presencial" y "Online" no funciona se puede seguir el proceso sin necesidad de completarlo esta incorrecto esto
+5- La eliminacion de curso no esta funcionando lo cual consumirar espacio el no poder borrar los cursos que no se necesita
+6- Los campos puede recibir cualquier caracter esto es un peligro ya que pueden inyectar datos en la base de datos que puede darle informacion valiosa
+7 - es muy vulnerable y carece de un codigo bien echo el simple echo de poder mandar cualquier datos lo confirma
+8- el manejo de datos negativos en la ahora de las estudiante esto esta muy mal porque puede hacer un cuello de botella
+
+Tecnica utilizada para dar con las vulnerabilidades:
+Pruebas de componente y de integracion realice pruebas a cada campo uno por uno para saber cuales datos recibia y cuales no luego realice pruebas de integracion ta integrado otro campos
+y probando la funcionalidad de registrar ya con esto pode encontrar esas vulnerabilidades 
+
+# ¿Cuál sería el siguiente paso y cómo se realizaría para garantizar que la funcionalidad se entregue con calidad?
+
+Lo primero es que si se me entrego las especificacion del modulo a trabajar digase  (Historia de HU) el modulo y los criterios de aceptacion se tienen que cumplir si o si en el modulo
+si no se cumple se le hace saber al scrum master y al desarrollador que no esta cumpliendoy se devuelve hasta que el desarrollador realice los ajuste necesarios
+
+3 puntos que puedo mencionar seria
+1- La validacion de la informacion antes de ser registrar esto si o si se tiene que cumplir porque tiene que haber un filtro de datos.
+2- Se tiene que realizar una demo del producto para dectetar posible cuello de botella y que si este cumpliendo los requisitos.
+3- Apoyo y comuinicacion del los desarrolladores y el equipo de QA para que el producto cumplar con los estandares de calidad.
 
 
+ # ¿Cómo evalúas y determinas si el error fue causado por esta funcionalidad?
+ Revisar la Funcionalidad: Verificar si el error esta relacionado directamente con la funcionalidad que se esta probando. Revisar el diseño y los requisitos de la funcionalidad.
 
+ Pruebas Aislada: Intentar replicar el error con diferentes escenarios de prueba para determinar si es espesifico de la funcionalidad o si puede ser causado por otra parte del sistema.
 
+ Si el erro es causado por la funcionalidad
+ -Documentar el problema: Detallo como la funcionalidad esta causando el error y proporsiciono reconmendaciones para su correcion.
+ -Informar al equipo de desarrollo: comunicar el error al equipo de desarrollo para que puedan investigar y corregir el problema.
 
+ # En caso de que no sea causado por ella, ¿qué harías?
+ Si el error no es causado por la funcionalidad
 
-
+ -Investigar Otras Areas: Examinar otras parte del sistema que podrian estar relacionados con el error. Realizar purbeas adicionales si es necesario
+ -Informar el Problema: Comunicar el error al equipo responsable de la parte del sistema donde parece originarse el problema, proporcionanando toda la informacion recopilada.
 
 
 
