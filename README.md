@@ -65,7 +65,7 @@ Inclui todos los casos en un solo Feature.
       | Tipo de Curso           | "Online"                        |
       | Link Descripción        | "https://example.com/curso-online" |
     And El usuario hace clic en el botón "Registrar"
-    Then ESe muestra el mensaje de que el campo "Imagen esta vacion."
+    Then Se muestra el mensaje de que el campo "Imagen esta vacion."
 
     Scenario: TC-05 Crear un curso presencial dejando uno de los campos de fecha y el campo numerico vacio.
     Given El formulario de registro de curso está accesible
@@ -80,7 +80,7 @@ Inclui todos los casos en un solo Feature.
       | Tipo de Curso           | "Online"                        |
       | Link Descripción        | "https://example.com/curso-online" |
     And El usuario hace clic en el botón "Registrar"
-    Then ESe muestra el mensaje de que algunos campos estan vacions
+    Then Se muestra el mensaje de que algunos campos estan vacions
 
     Scenario: TC-06 Crear un curso dejando el campo descripcion vacion
     Given El formulario de registro de curso está accesible
@@ -95,7 +95,7 @@ Inclui todos los casos en un solo Feature.
       | Tipo de Curso           | "Online"                        |
       | Link Descripción        | "https://example.com/curso-online" |
     And El usuario hace clic en el botón "Registrar"
-    Then Se muestra el mensaje de que el campo "Descripcione sta vacion"
+    Then Se muestra el mensaje de que el campo "Descripcione esta vacion"
 
     (Casos de prueba Fallido que en este caso son Bug)
     
@@ -114,7 +114,7 @@ Inclui todos los casos en un solo Feature.
     And El usuario hace clic en el botón "Registrar"
     Then Se visualizar en la lista de cursos (Esta accion esta incorrecta.)
 
-    Scenario: TC-08 Crear un curso con fechano disponible
+    Scenario: TC-08 Crear un curso con fechano no disponible
     Given El formulario de registro de curso está accesible
     When El usuario completa todos los campos con datos válidos menos en el campo "Fecha inicion" y en "Fecha fin"
       | Nombre del Curso        | "Curso de Programación"         |
@@ -157,9 +157,9 @@ Inclui todos los casos en un solo Feature.
       | Tipo de Curso           |                                 |
       | Link Descripción        | "https://example.com/curso-online" |
     And El usuario hace clic en el botón "Registrar"
-    Then "Se deberia de mostrar un error ya que no se puede registrar con campos requeridosvacios"
+    Then "Se deberia de mostrar un error ya que no se puede registrar con campos requeridos vacios"
 
-     Scenario: TC-11 Crear un curso scon datos numericos en los campos
+     Scenario: TC-11 Crear un curso con datos numericos en los campos
     Given El formulario de registro de curso está accesible
     When El usuario completa todos los campos con datos válidos menos en la lista de valores del tipo de curso
       | Nombre del Curso        |  4341241234|
@@ -209,7 +209,11 @@ La paltaforma da un 405 al momento de intentar eliminar uno de los cursos de la 
 ![image](https://github.com/user-attachments/assets/9ca5f08b-a68b-4292-8a20-7897c1a9c6d2)
 
 
+Listado de los casos de prueba en el excel 
+https://docs.google.com/spreadsheets/d/1ZFc3xUtU4UTZinGqBK4HQ64veQZGyYkqq_J3AGab6pY/edit?usp=sharing
 
+Link del Driver con las evidencias de las Ejecuciones
+https://drive.google.com/drive/folders/1E8mRB6XzfV8a8I_KfZ_okPGV5je4CGfD?usp=drive_link
 
 
 
