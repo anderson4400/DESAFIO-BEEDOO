@@ -1,4 +1,4 @@
-# decisiones para crear la historia de usuario
+# Decisiones para crear la historia de usuario
 Motivos para crear los casos de pruebas
 
 Cobertura Completa: Asegurar que todas las funcionalidades principales sean testeadas para detectar posibles fallos.
