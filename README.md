@@ -143,6 +143,49 @@ Inclui todos los casos en un solo Feature.
       | Link Descripción        | "https://example.com/curso-online" |
     And El usuario hace clic en el botón "Registrar"
     Then "Se deberia de mostrar un error ya que no se puede registrar con numeros negativos"
+
+    Scenario: Crear un curso sin seleccionar el tipo de curso
+    Given El formulario de registro de curso está accesible
+    When El usuario completa todos los campos con datos válidos menos en la lista de valores del tipo de curso
+      | Nombre del Curso        | "Curso de Programación"         |
+      | Descripción del Curso   | "Prueba de fecha"               |
+      | Instructor              | "Ing. Rodríguez"                |
+      | Imagen                  | "https://example.com/curso-onlin"  |
+      | Fecha de Inicio         | "2024-08-15"                    |
+      | Fecha de Fin            | "2024-09-15"                    |
+      | Número de Estudiantes   |  4                              |
+      | Tipo de Curso           |                                 |
+      | Link Descripción        | "https://example.com/curso-online" |
+    And El usuario hace clic en el botón "Registrar"
+    Then "Se deberia de mostrar un error ya que no se puede registrar con campos requeridosvacios"
+
+     Scenario: Crear un curso scon datos numericos en los campos
+    Given El formulario de registro de curso está accesible
+    When El usuario completa todos los campos con datos válidos menos en la lista de valores del tipo de curso
+      | Nombre del Curso        |  4341241234|
+      | Descripción del Curso   |  412341234123|
+      | Instructor              |  123412341234|
+      | Imagen                  |  123412341234|
+      | Fecha de Inicio         |  412341234123|
+      | Fecha de Fin            | 412341234123|
+      | Número de Estudiantes   |  4 |
+      | Tipo de Curso           |    |
+      | Link Descripción        | "412412341234" |
+    And El usuario hace clic en el botón "Registrar"
+    Then "Se deberia de mostrar un error ya que no se puede registrar un cursos con datos numericos en campos que no deberia permitirlos"
+
+     Scenario: Realizar la eliminacion de uno de los cursos en el listao de cursos
+    Given El formulario de registro de curso está accesible
+    When Se meustra que existen cursos creado en la lita de cursos
+    And El usuario hace clic en el botón "Eliminar Curso"
+    Then "Se deberia de mostrar un mensaje indicando que se elimino pero no lo permite porque esta dando error."
+
+Problemas de la plataforma que se tienen que tomar en consideracion
+
+Los campos del formulario tienen que ser requeridos para evitar que se registren datos vacio se tiene que mostrar un mensaje al momento de que se intente enviar el formulario vacio
+![image](https://github.com/user-attachments/assets/f7cbe14b-5067-4cb3-a4d0-988065d89cf7)
+
+
     
 
 
