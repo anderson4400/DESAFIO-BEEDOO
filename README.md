@@ -185,6 +185,36 @@ Problemas de la plataforma que se tienen que tomar en consideracion
 Los campos del formulario tienen que ser requeridos para evitar que se registren datos vacio se tiene que mostrar un mensaje al momento de que se intente enviar el formulario vacio
 ![image](https://github.com/user-attachments/assets/f7cbe14b-5067-4cb3-a4d0-988065d89cf7)
 
+los campos permiten datos numericos lo que esta muy mal solo el algunos campos tienen que recibir numero como los esto hace que se registre datos basura
+![image](https://github.com/user-attachments/assets/2e111477-7153-45b8-ae41-851401838876)
+![image](https://github.com/user-attachments/assets/c9eaacd9-af24-4835-af04-2473a93859bf)
+
+El campo fecha no esta haciendo una validacion para comprobar la fecha y puede recibir fechas del paso de mucho tiempo esto se tiene que mejorar
+![image](https://github.com/user-attachments/assets/62032a86-bfd5-4eea-a3d0-1b61f0164717)
+![image](https://github.com/user-attachments/assets/86371afa-a077-43f8-ac05-12854db8e95a)
+
+Campo Tipo de curso: esa lista no esta funcionando permite realizar registro sin tomar un valor de la lista otro valor que tiene que ser requerido
+![image](https://github.com/user-attachments/assets/4cfc5898-b7c6-4f63-b82a-0c40527cc6af)
+
+Campo Numero de estudiante: este recibe numero degativos lo cual esta muy mal esos datos no pueden recibir negativos porque entonces que persona tomara los cursos
+![image](https://github.com/user-attachments/assets/06b2fd79-40be-402a-8a37-dee0563f8051)
+![image](https://github.com/user-attachments/assets/dccf1dee-edd0-4839-926f-9b22161e39d4)
+
+Los campos estan recibiendo cualquier tipo de caracteres eso se tiene que arreglar o aplicar una mascara para que solo reciba ciertos datos esto esta muy mal
+![image](https://github.com/user-attachments/assets/7d8437de-00ed-4af1-8677-ec6286fe8757)
+![image](https://github.com/user-attachments/assets/4c82284f-aee7-409f-a2db-a2e3ad6bbc2f)
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
