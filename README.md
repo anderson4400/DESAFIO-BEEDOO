@@ -213,7 +213,7 @@ Listado de los casos de prueba en el excel
 https://docs.google.com/spreadsheets/d/1ZFc3xUtU4UTZinGqBK4HQ64veQZGyYkqq_J3AGab6pY/edit?usp=sharing
 
 Link del Driver con las evidencias de las Ejecuciones
-https://drive.google.com/drive/folders/1E8mRB6XzfV8a8I_KfZ_okPGV5je4CGfD?usp=drive_link
+https://drive.google.com/drive/folders/1E8mRB6XzfV8a8I_KfZ_okPGV5je4CGfD?usp=sharing
 
 
 
